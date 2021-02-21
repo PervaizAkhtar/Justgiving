@@ -1,0 +1,9 @@
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.Domain\bin\Debug\netcoreapp3.1\JG.FinTechTest.Domain.deps.json
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.Domain\bin\Debug\netcoreapp3.1\JG.FinTechTest.Domain.dll
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.Domain\bin\Debug\netcoreapp3.1\JG.FinTechTest.Domain.pdb
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.Domain\obj\Debug\netcoreapp3.1\JG.FinTechTest.Domain.csprojAssemblyReference.cache
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.Domain\obj\Debug\netcoreapp3.1\JG.FinTechTest.Domain.AssemblyInfoInputs.cache
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.Domain\obj\Debug\netcoreapp3.1\JG.FinTechTest.Domain.AssemblyInfo.cs
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.Domain\obj\Debug\netcoreapp3.1\JG.FinTechTest.Domain.csproj.CoreCompileInputs.cache
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.Domain\obj\Debug\netcoreapp3.1\JG.FinTechTest.Domain.dll
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.Domain\obj\Debug\netcoreapp3.1\JG.FinTechTest.Domain.pdb
