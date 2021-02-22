@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using JG.FinTechTest.API.Data;
+using JG.FinTechTest.API.Services;
+using JG.FinTechTest.Domain;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,19 +14,20 @@ namespace JG.FinTechTest.API.Controllers
     [Route("api/giftaid")]
     public class GiftAidController : ControllerBase
     {
-      
-
-        private readonly ILogger<GiftAidController> _logger;
-
-        public GiftAidController(ILogger<GiftAidController> logger)
+        private readonly IGiftAidCalculationService _aidCalculationService;
+        public GiftAidController(IGiftAidCalculationService aidCalculationService)
         {
-            _logger = logger;
+            _aidCalculationService = aidCalculationService;
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(double number = 0)
         {
-            return Ok("Hello Word");
+            var giftAidResponse = new GiftAidResponse();
+            giftAidResponse.DonationAmount = number;
+            giftAidResponse.GiftAidAmount = _aidCalculationService.CalculateGiftAmount(number);
+
+            return Ok(giftAidResponse);
         }
     }
 }

@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\JG.FinTechTest.API\JG.FinTechTest.API.csproj" />
+    <ProjectReference Include="..\JG.FinTechTest.Domain\JG.FinTechTest.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
