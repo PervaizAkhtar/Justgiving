@@ -20,6 +20,12 @@ namespace JG.FinTechTest.API.Controllers
             _aidCalculationService = aidCalculationService;
         }
 
+
+        /// <summary>
+        /// Get the amount of gift aid reclaimable for donation amount
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns>GiftAidResponse</returns>
         [HttpGet]
         public IActionResult Get(double number)
         {

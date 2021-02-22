@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,23 @@ namespace JG.FinTechTest.API
             services.AddControllers();
             services.AddTransient<IGiftAidCalculationService, GiftAidCalculationService>();
             services.AddDbContext<GiftAidDbContext>(options => options.UseInMemoryDatabase(databaseName: "GiftAidDb"));
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c=> {
+
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Gift Aid Service",
+                    Description = "Gift Aid Service",
+                    TermsOfService = new Uri("https://github.com/PervaizAkhtar/Justgiving"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "M Pervaiz Akhtar",
+                        Email = "m.akhtar101@gmail.com",
+                        Url = new Uri("https://github.com/PervaizAkhtar/Justgiving"),
+                    }
+                });
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
