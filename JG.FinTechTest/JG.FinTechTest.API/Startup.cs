@@ -31,6 +31,7 @@ namespace JG.FinTechTest.API
             services.AddControllers();
             services.AddTransient<IGiftAidCalculationService, GiftAidCalculationService>();
             services.AddDbContext<GiftAidDbContext>(options => options.UseInMemoryDatabase(databaseName: "GiftAidDb"));
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +41,13 @@ namespace JG.FinTechTest.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gift Aid Service");
+            });
 
             app.UseHttpsRedirection();
 

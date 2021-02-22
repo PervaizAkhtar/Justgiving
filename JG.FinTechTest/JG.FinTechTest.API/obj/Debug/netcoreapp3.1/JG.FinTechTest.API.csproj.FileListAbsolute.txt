@@ -35,3 +35,8 @@ C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.API\bin\Debug\net
 C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.API\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.API\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.API\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.API\obj\Debug\netcoreapp3.1\JG.FinTechTest.API.MvcApplicationPartsAssemblyInfo.cs

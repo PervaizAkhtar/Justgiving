@@ -21,12 +21,14 @@ namespace JG.FinTechTest.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(double number = 0)
+        public IActionResult Get(double number)
         {
             var giftAidResponse = new GiftAidResponse();
-            giftAidResponse.DonationAmount = number;
-            giftAidResponse.GiftAidAmount = _aidCalculationService.CalculateGiftAmount(number);
-
+            if (number > 0)
+            {
+                giftAidResponse.DonationAmount = number;
+                giftAidResponse.GiftAidAmount = _aidCalculationService.CalculateGiftAmount(number);
+            }
             return Ok(giftAidResponse);
         }
     }
