@@ -34,7 +34,7 @@ namespace JG.FinTechTest.API
             services.AddTransient<IGiftAidCalculationService, GiftAidCalculationService>();
             services.AddDbContext<GiftAidDbContext>(options => options.UseInMemoryDatabase(databaseName: "GiftAidDb"));
             services.AddTransient<IGiftAidRepository, GiftAidRepository>();
-
+            services.AddTransient<IDeclarationService, DeclarationService>();
             services.AddSwaggerGen(c=> {
 
                 c.SwaggerDoc("v1", new OpenApiInfo
