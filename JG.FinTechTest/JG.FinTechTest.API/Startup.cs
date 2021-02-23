@@ -1,4 +1,5 @@
 using JG.FinTechTest.API.Data;
+using JG.FinTechTest.API.Repositories;
 using JG.FinTechTest.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +33,8 @@ namespace JG.FinTechTest.API
             services.AddControllers();
             services.AddTransient<IGiftAidCalculationService, GiftAidCalculationService>();
             services.AddDbContext<GiftAidDbContext>(options => options.UseInMemoryDatabase(databaseName: "GiftAidDb"));
+            services.AddTransient<IGiftAidRepository, GiftAidRepository>();
+
             services.AddSwaggerGen(c=> {
 
                 c.SwaggerDoc("v1", new OpenApiInfo

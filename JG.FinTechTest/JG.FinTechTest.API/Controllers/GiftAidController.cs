@@ -1,4 +1,5 @@
 ﻿using JG.FinTechTest.API.Data;
+using JG.FinTechTest.API.Repositories;
 using JG.FinTechTest.API.Services;
 using JG.FinTechTest.Domain;
 using Microsoft.AspNetCore.Mvc;
@@ -14,9 +15,11 @@ namespace JG.FinTechTest.API.Controllers
     [Route("api/giftaid")]
     public class GiftAidController : ControllerBase
     {
+        private readonly IGiftAidRepository  _aidRepository;
         private readonly IGiftAidCalculationService _aidCalculationService;
-        public GiftAidController(IGiftAidCalculationService aidCalculationService)
+        public GiftAidController(IGiftAidRepository aidRepository, IGiftAidCalculationService aidCalculationService)
         {
+            _aidRepository = aidRepository;
             _aidCalculationService = aidCalculationService;
         }
 
@@ -36,6 +39,24 @@ namespace JG.FinTechTest.API.Controllers
                 giftAidResponse.GiftAidAmount = _aidCalculationService.CalculateGiftAmount(number);
             }
             return Ok(giftAidResponse);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="donor"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult Post(Donor donor)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+             _aidRepository.SaveDonor(donor);
+
+            var response = _aidCalculationService.PrepareDeclaration(donor.DonationAmount);
+
+            return Ok(response);
         }
     }
 }

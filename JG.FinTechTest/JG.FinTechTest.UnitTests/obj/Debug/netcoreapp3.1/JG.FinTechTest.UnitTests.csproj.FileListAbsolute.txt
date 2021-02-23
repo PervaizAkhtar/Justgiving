@@ -116,3 +116,9 @@ C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.UnitTests\bin\Deb
 C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.UnitTests\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.UnitTests\bin\Debug\netcoreapp3.1\JG.FinTechTest.API.dll
 C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.UnitTests\bin\Debug\netcoreapp3.1\JG.FinTechTest.API.pdb
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.UnitTests\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.UnitTests\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.UnitTests\bin\Debug\netcoreapp3.1\Moq.dll
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.UnitTests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.UnitTests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\makht\source\Justgiving\JG.FinTechTest\JG.FinTechTest.UnitTests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
