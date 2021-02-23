@@ -30,16 +30,5 @@ namespace JG.FinTechTest.API.Services
 
             return donationAmount / (100 - _taxRate);
         }
-
-        public GiftAidDeclarationResponse PrepareDeclaration(double donationAmount)
-        {
-            var response = new GiftAidDeclarationResponse();
-
-            response.GiftAidAmount = CalculateGiftAmount(donationAmount);
-
-            response.DeclarationId = Guid.NewGuid();
-
-            return response;
-        }
     }
 }

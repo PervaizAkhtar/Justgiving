@@ -17,10 +17,13 @@ namespace JG.FinTechTest.API.Controllers
     {
         private readonly IGiftAidRepository  _aidRepository;
         private readonly IGiftAidCalculationService _aidCalculationService;
-        public GiftAidController(IGiftAidRepository aidRepository, IGiftAidCalculationService aidCalculationService)
+        private readonly IDeclarationService _declarationService;
+        public GiftAidController(IGiftAidRepository aidRepository, IGiftAidCalculationService aidCalculationService,
+            IDeclarationService declarationService)
         {
             _aidRepository = aidRepository;
             _aidCalculationService = aidCalculationService;
+            _declarationService = declarationService;
         }
 
 
@@ -47,14 +50,14 @@ namespace JG.FinTechTest.API.Controllers
         /// <param name="donor"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult Post(Donor donor)
+        public async Task<IActionResult> Post(Donor donor)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-             _aidRepository.SaveDonor(donor);
+             await _aidRepository.SaveDonor(donor);
 
-            var response = _aidCalculationService.PrepareDeclaration(donor.DonationAmount);
+            var response = _declarationService.PrepareDeclaration(donor.DonationAmount);
 
             return Ok(response);
         }

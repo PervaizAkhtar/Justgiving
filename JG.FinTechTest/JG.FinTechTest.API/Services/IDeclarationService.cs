@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace JG.FinTechTest.API.Services
 {
-    public interface IGiftAidCalculationService
+    public interface IDeclarationService
     {
-        public double CalculateGiftAmount(double donationAmount);
+        public GiftAidDeclarationResponse PrepareDeclaration(double donationAmount);
     }
 }

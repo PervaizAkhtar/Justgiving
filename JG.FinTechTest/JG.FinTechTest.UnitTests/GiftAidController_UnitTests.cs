@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using System;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace JG.FinTechTest.UnitTests
@@ -16,7 +17,7 @@ namespace JG.FinTechTest.UnitTests
     {
         private GiftAidDbContext _dbContext;
         private IGiftAidCalculationService _calculationService;
-
+        private IDeclarationService _declarationService;
         public GiftAidController_UnitTests()
         {
             Setup();
@@ -28,13 +29,14 @@ namespace JG.FinTechTest.UnitTests
                           .UseInMemoryDatabase(databaseName: "GiftAidDb").Options;
             _dbContext = new GiftAidDbContext(options);
             _calculationService = new GiftAidCalculationService();
+            _declarationService = new DeclarationService(_calculationService);
         }
 
         [Fact]
         public void CalculeGiftAidAmount()
         {
             IGiftAidRepository aidRepository = new GiftAidRepository(_dbContext);
-            GiftAidController controller = new GiftAidController(aidRepository,_calculationService);
+            GiftAidController controller = new GiftAidController(aidRepository,_calculationService, _declarationService);
 
             double donationAmount = 150;
             var expected = 1.875;
@@ -48,10 +50,10 @@ namespace JG.FinTechTest.UnitTests
         }
 
         [Fact]
-        public void SaveDonor()
+        public async Task SaveDonor()
         {
             IGiftAidRepository aidRepository = new GiftAidRepository(_dbContext);
-            GiftAidController controller = new GiftAidController(aidRepository, _calculationService);
+            GiftAidController controller = new GiftAidController(aidRepository, _calculationService, _declarationService);
 
             var donor = new Donor()
             {
@@ -63,7 +65,7 @@ namespace JG.FinTechTest.UnitTests
 
             var expected = 1.875;
 
-            var actionResult = controller.Post(donor);
+            var actionResult = await controller.Post(donor);
             var okResult = actionResult as OkObjectResult;
             var actual = (GiftAidDeclarationResponse)okResult.Value;
 

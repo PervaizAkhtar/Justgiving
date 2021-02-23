@@ -15,11 +15,11 @@ namespace JG.FinTechTest.API.Repositories
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(_dbContext));
         }
 
-        public void SaveDonor(Donor donor)
+        public async Task SaveDonor(Donor donor)
         {
             _dbContext.Donors.Add(donor);
 
-             _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
